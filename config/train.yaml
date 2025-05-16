@@ -1,0 +1,13 @@
+data:
+  path: Processed_Data
+  train_file: X_train_processed.csv
+  test_file: X_test_processed.csv
+
+model:
+  save_path: model
+  load_path: null
+
+train:
+  seed: 3407
+  num_epochs: 100
+  patience: 10000
