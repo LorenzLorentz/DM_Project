@@ -4,7 +4,7 @@ import torch
 import torch.utils.data as data
 
 class Dataset(data.Dataset):
-    def __init__(self, features, labels=None, scaler=None, fit_scaler=False):
+    def __init__(self, features, labels=None, device:str=None):
         """
         Args:
             features (pd.DataFrame or np.ndarray): Input features.
@@ -13,25 +13,18 @@ class Dataset(data.Dataset):
             fit_scaler (bool): If True and scaler is provided, fit the scaler.
                                If True and scaler is None, create and fit a new one.
         """
+        self.device = device
+
         if isinstance(features, pd.DataFrame):
             features = features.values.astype(np.float32)
 
-        if scaler:
-            if fit_scaler:
-                self.features = scaler.fit_transform(features).astype(np.float32)
-            else:
-                self.features = scaler.transform(features).astype(np.float32)
-            self.scaler = scaler
-        else:
-            self.features = features.astype(np.float32)
-            self.scaler = None
-
-
+        self.features = features
         self.labels = labels
+        
         if self.labels is not None:
             if isinstance(labels, pd.Series):
                 self.labels = labels.values.astype(np.float32)
-            self.labels = self.labels.reshape(-1, 1) # Ensure correct shape for BCEWithLogitsLoss
+            self.labels = self.labels.reshape(-1, 1)
 
     def __len__(self):
         return len(self.features)
@@ -40,9 +33,9 @@ class Dataset(data.Dataset):
         feature_vector = self.features[idx]
         if self.labels is not None:
             label = self.labels[idx]
-            return torch.tensor(feature_vector, dtype=torch.float32), torch.tensor(label, dtype=torch.float32)
+            return torch.tensor(feature_vector, dtype=torch.float32, device=self.device), torch.tensor(label, dtype=torch.float32, device=self.device)
         else:
-            return torch.tensor(feature_vector, dtype=torch.float32)
+            return torch.tensor(feature_vector, dtype=torch.float32, device=self.device)
 
     def get_scaler(self):
         return self.scaler
