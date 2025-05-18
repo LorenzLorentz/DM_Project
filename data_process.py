@@ -121,7 +121,7 @@ def prepare_dataset(payment:pd.DataFrame, goods:pd.DataFrame, target_date:date, 
         features[f'goods_sum_pseudomonth_{i}_before'] = get_timespan_features(goods, target_date, i * 28, 28).sum(axis=1).values
 
     features_df = pd.DataFrame(features)
-    # features_df.set_index('customer_id', inplace=True)
+    features_df.set_index('customer_id', inplace=True)
 
     if is_train:
         features_df['label'] = goods[pd.date_range(target_date, periods=30)].max(axis=1).values
