@@ -11,76 +11,87 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 import hydra
 
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-from .model import MLPModel
-from .dataset import Dataset
-from .utils import print_metrics
+from model import MLPModel
+from dataset import Dataset
+from utils import print_metrics
 
 class Trainer:
-    def __init__(self, criteriion:str, device:str):
+    def __init__(self, criterion:str="BCEWithLogits", device:str=None):
         self.model = MLPModel(device=device)
         self.optimizer = optim.Adam(self.model.parameters())
 
-        if criteriion == "BCEWithLogits":
-            self.criteriion = nn.BCEWithLogitsLoss()
+        if criterion == "BCEWithLogits":
+            self.criterion = nn.BCEWithLogitsLoss()
         else:
             raise NotImplementedError()
 
     def train(self, train_loader:DataLoader, val_loader:DataLoader, load_path:str=None, save_path:str=None, num_epochs:int=None, patience:int=10000):
         self.model.load(path=load_path)
-        history = {'train_loss': [], 'val_loss': [], 'val_auc': [], 'val_accuracy': []}
-        batch_iterator = tqdm(self.train_loader, desc=f"Epoch {epoch+1}/{num_epochs}", leave=False)
+        history = {'train_loss': [], 'val_loss': [], 'val_auc': [], 'val_accuracy': [], 'val_precision': []}
         best_val_loss = float('inf')
         epochs_no_improve = 0
 
-        for epoch in tqdm(range(num_epochs)):
+        epoch_iterator = tqdm(range(num_epochs), desc="Epochs")
+        for epoch in epoch_iterator:
+            batch_iterator = tqdm(train_loader, desc=f"Epoch {epoch+1}/{num_epochs} Train", leave=False)
             self.model.train()
             train_loss = 0.0
 
-            for features, labels in train_loader:
+            for features, labels in batch_iterator:
                 labels_pre = self.model(features)
-                loss = self.criteriion(labels_pre, labels)
+                loss = self.criterion(labels_pre, labels)
                 self.optimizer.zero_grad()
-                loss.zero_grad()
+                loss.backward()
                 self.optimizer.step()
                 train_loss += loss.item()
                 batch_iterator.set_postfix(loss=loss.item())
             
-            train_loss /= len(train_loader)
+            train_loss /= len(train_loader.dataset)
             history['train_loss'].append(train_loss)
-            tqdm.write(f"Epoch {epoch+1}: train_loss = {train_loss:.4f}")
 
             self.model.eval()
             val_loss = 0.0
             all_labels = []
             all_outputs_prob = []
 
+            val_batch_iterator = tqdm(val_loader, desc=f"Epoch {epoch+1}/{num_epochs} Validation", leave=False)
             with torch.no_grad():
-                for features, labels in val_loader:
+                for features, labels in val_batch_iterator:
                     labels_pre = self.model(features)
-                    loss = self.criteriion(labels_pre, labels)
+                    loss = self.criterion(labels_pre, labels)
                     val_loss += loss
 
                     all_labels.extend(labels.cpu().numpy())
                     all_outputs_prob.extend(torch.sigmoid(labels_pre).cpu().numpy())
-                val_loss /= len(val_loader)
+                val_loss /= len(val_loader.dataset)
             
             history['val_loss'].append(val_loss)
             all_labels = np.array(all_labels).flatten()
-            all_outputs_proba = np.array(all_outputs_proba).flatten()
-            all_outputs_binary = (all_outputs_proba > 0.5).astype(int)
+            all_outputs_prob = np.array(all_outputs_prob).flatten()
+            all_outputs_binary = (all_outputs_prob > 0.5).astype(int)
 
-            metrics = print_metrics(all_labels, all_outputs_proba, all_outputs_binary, phase=f"Epoch {epoch+1}/{num_epochs} Val")
+            metrics = print_metrics(all_labels, all_outputs_prob, all_outputs_binary, phase=f"Epoch {epoch+1}/{num_epochs} Val")
             history['val_auc'].append(metrics['auc'])
             history['val_accuracy'].append(metrics['accuracy'])
+            history['val_precision'].append(metrics["precision"])
 
-            print(f"Epoch {epoch+1}/{num_epochs} - Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
+            postfix_stats = {
+                'train_loss': f"{train_loss:.4f}",
+                'val_loss': f"{val_loss:.4f}",
+                'val_auc': f"{metrics['auc']:.4f}",
+                'val_acc': f"{metrics['accuracy']:.4f}"
+            }
+            
+            epoch_iterator.set_postfix(postfix_stats)
 
             if val_loss < best_val_loss:
                 best_val_loss = val_loss
                 epochs_no_improve = 0
                 self.model.save(path=save_path)
+                tqdm.write(f"Epoch {epoch+1}: New best model saved with val_loss: {best_val_loss:.4f}") # Use tqdm.write for this
             else:
                 epochs_no_improve += 1
                 if epochs_no_improve > patience:
@@ -90,26 +101,23 @@ class Trainer:
         print("Training complete.")
         return history
 
-    def predict(model, data_loader:DataLoader):
-        model.eval()
+    def predict(self, data_loader:DataLoader):
+        self.model.eval()
         predictions_prob = []
         with torch.no_grad():
             for features in data_loader:
-                if isinstance(features, list):
-                    features = features[0]
-                outputs = model(features)
+                outputs = self.model(features)
                 predictions_prob.extend(torch.sigmoid(outputs).cpu().numpy())
         return np.array(predictions_prob).flatten()
-    
+
 @hydra.main(config_name="train", config_path="config", version_base="1.3")
-def main(config):
+def train(config):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    # STEP1: Training
-    train_val_df = pd.read_csv(os.path.join(config.data.path, config.data.train_file), index_col='customer_id')
+    train_df = pd.read_csv(os.path.join(config.data.path, config.data.train_file), index_col='customer_id')
 
-    X = train_val_df.drop("???", axis=1)
-    y = train_val_df["???"]
+    X = train_df.drop("label", axis=1)
+    y = train_df["label"]
 
     X = X.replace([np.inf, -np.inf], np.nan)
     for col in X.columns:
@@ -119,31 +127,29 @@ def main(config):
 
     X_train_df, X_val_df, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=config.train.seed, stratify=y)
 
-    train_dataset = Dataset(X_train_df, y_train, scaler=scaler, fit_scaler=True)
-    fitted_scaler = train_dataset.get_scaler()
-    val_dataset = Dataset(X_val_df, y_val, scaler=fitted_scaler, fit_scaler=False)
-    train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=256, shuffle=False)
+    train_dataset = Dataset(X_train_df, y_train, device=device)
+    val_dataset = Dataset(X_val_df, y_val, device=device)
     
+    train_loader = DataLoader(train_dataset, batch_size=config.train.batch_size, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=config.train.batch_size, shuffle=False)
+
     trainer = Trainer(device=device)
-    train_history = trainer.train(train_loader=train_loader, val_loader=val_loader, load_path=config.model.load_path, save_path=config.model.save_pth, num_epochs=config.train.num_epochs, patience=config.train.patience)
+    trainer.train(train_loader=train_loader, val_loader=val_loader, load_path=config.model.load_path, save_path=config.model.save_path, num_epochs=config.train.num_epochs, patience=config.train.patience)
 
-    #STEP2: Testing
-    test_df_pytorch = pd.read_csv(os.path.join(config.data.path, config.data.test_file), index_col='customer_id')
-    test_df_pytorch = test_df_pytorch.replace([np.inf, -np.inf], np.nan)
-    for col in test_df_pytorch.columns:
-        if test_df_pytorch[col].isnull().any():
-                test_df_pytorch[col] = test_df_pytorch[col].fillna(X[col].mean())
+    test_df = pd.read_csv(os.path.join(config.data.path, config.data.test_file), index_col='customer_id')
+    sub_df = pd.read_csv(os.path.join(config.submit.path, config.submit.file))
+    test_dataset = Dataset(test_df, device=device)
+    test_loader = DataLoader(test_dataset, batch_size=config.train.batch_size, shuffle=False)
+    pred = trainer.predict(test_loader)
+    pred_df = pd.DataFrame({"customer_id": test_df.index, "pred": pred})
 
-    test_dataset_pytorch = Dataset(test_df_pytorch, labels=None, scaler=fitted_scaler, fit_scaler=False)
-    test_loader_pytorch = DataLoader(test_dataset_pytorch, batch_size=256, shuffle=False)
-    
-    test_pre = trainer.predict(test_loader_pytorch)
-
-    # STEP3: Create a submission file
-    submission_pytorch_df = pd.DataFrame({'customer_id': test_df_pytorch.index, 'prediction_pytorch': test_pre})
-    submission_pytorch_df.to_csv('submission_pytorch.csv', index=False)
-    print("PyTorch submission_pytorch.csv saved.")
+    submission = pd.merge(sub_df, pred_df, on='customer_id', how='left')
+    submission.fillna(0,inplace=True)
+    submission = submission[['customer_id','pred']]
+    submission.rename(columns={'customer_id':'customer_id','pred':'result'}, inplace=True)
+    submission.loc[submission['result']>0.5, 'result'] = 1
+    submission.loc[submission['result']<=0.5, 'result'] = 0
+    submission.to_csv('submission.csv',index=False)
 
 if __name__ == "__main__":
-    main()
+    train()

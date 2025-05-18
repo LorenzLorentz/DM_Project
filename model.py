@@ -5,7 +5,7 @@ import torch.optim as optim
 import datetime
 
 class MLPModel(nn.Module):
-    def __init__(self, input_dim:int, hidden_dims:list[int]=[128, 128, 64], output_dim:int=1, dropout_rate:float=0.2, device:str=None):
+    def __init__(self, input_dim:int=66, hidden_dims:list[int]=[128, 128, 64], output_dim:int=1, dropout_rate:float=0.2, device:str=None):
         super(MLPModel, self).__init__()
         self.device = device
         
@@ -32,7 +32,7 @@ class MLPModel(nn.Module):
                     nn.init.constant_(m.bias, 0)
             
             elif isinstance(m, nn.BatchNorm1d) or isinstance(m, nn.BatchNorm2d):
-                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+                nn.init.constant_(m.weight, 1)
                 if m.bias is not None:
                     nn.init.constant_(m.bias, 0)
         
@@ -42,9 +42,12 @@ class MLPModel(nn.Module):
                     noise = torch.randn_like(one_hot) * 0.1
                     m.weight.copy_(one_hot + noise)
 
-    def save(self, path:str):
-        time=datetime.datetime.now().strftime("%m%d%H%M")
-        torch.save(self.state_dict(), f"{path}/MLPModel_{time}.pth")
+    def save(self, path:str, name:str=None):
+        if name:
+            torch.save(self.state_dict(), f"{path}/{name}.pth")
+        else:
+            time=datetime.datetime.now().strftime("%m%d%H%M")
+            torch.save(self.state_dict(), f"{path}/MLPModel_{time}.pth")
 
     def load(self, path:str):
         if path:
