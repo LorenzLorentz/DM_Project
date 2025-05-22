@@ -1,18 +1,66 @@
+model_name: mlp
+
 data:
   path: Processed_Data
-  train_file: X_train_processed.csv
-  test_file: X_test_processed.csv
+  train_file: train.pkl
+  test_file: test.pkl
 
 submit:
   path: Data
   file: submission.csv
-
-model:
-  save_path: model
-  load_path: null
 
 train:
   seed: 42
   num_epochs: 10
   patience: 10000
   batch_size: 512
+  random_seed: 3407
+  verbose: 100
+
+predict:
+  buy_num: 450000
+
+mlp:
+  if_predict: false
+  lr: 1e-4
+  num_epochs: 20
+  load_path: null
+  save_path: model/MLPModel
+  input_dim: 61
+  hidden_dims: [128, 128, 64]
+  output_dim: 1
+  dropout_rate: 0.1
+  criterion: BCEWithLogits
+  batch_size: 512
+  device: cpu
+  verbose: 1
+
+xgb:
+  if_predict: false
+  lr: 0.005
+  num_epochs: 2500
+  load_path: null
+  save_path: model/XGBModel
+  max_depth: 5
+  subsample: 1
+  colsample_bytree: 1
+  reg_alpha: 0.25
+  reg_lambda: 0.25
+  min_child_weight: 3
+  use_label_encoder: false
+
+lgb:
+  if_predict: false
+  lr: 0.005
+  num_epochs: 2500
+  load_path: null
+  save_path: model/LGBModel
+  num_leaves: 31
+  reg_alpha: 0.25
+  reg_lambda: 0.25
+  max_depth: -1
+  min_child_samples: 3
+  subsample: 1
+  colsample_bytree: 1
+
+din:

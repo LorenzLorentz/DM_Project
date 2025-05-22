@@ -71,6 +71,9 @@ def preprocess(data:pd.DataFrame) -> pd.DataFrame:
     
     feature.drop(['goods_list_time_last','goods_delist_time_last','order_pay_time_last'],axis=1,inplace=True)
 
+    feature.replace([np.inf, -np.inf], np.nan, inplace=True)
+    feature.fillna(-999, inplace=True)
+
     return feature
 
 def label_encode(data:pd.DataFrame | list[pd.DataFrame], feature:str):
