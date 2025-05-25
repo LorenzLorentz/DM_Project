@@ -39,3 +39,22 @@ class Dataset(data.Dataset):
 
     def get_scaler(self):
         return self.scaler
+    
+class DinDataset(Dataset):
+    def __init__(self, dataframe:pd.DataFrame):
+        self.data = dataframe
+
+    def __len__(self) -> int:
+        return len(self.data)
+
+    def __getitem__(self, idx:int) -> dict[str, torch.Tensor]:
+        row = self.data.iloc[idx]
+
+        return {
+            'customer_id': torch.tensor(row['customer_id'], dtype=torch.long),
+            'history_goods': torch.tensor(row['history_goods'], dtype=torch.long),
+            'history_classes': torch.tensor(row['history_classes'], dtype=torch.long),
+            'candidate_good': torch.tensor(row['candidate_good'], dtype=torch.long),
+            'candidate_class': torch.tensor(row['candidate_class'], dtype=torch.long),
+            'label': torch.tensor(row['label'], dtype=torch.float32)
+        }
