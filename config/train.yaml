@@ -1,9 +1,11 @@
 model_name: mlp
 
 data:
+  raw_data_path: Data
   path: Processed_Data
   train_file: train.pkl
   test_file: test.pkl
+  feature_method: both # agg or time or both
 
 submit:
   path: Data
