@@ -1,4 +1,4 @@
-model_name: reg
+model_name: xgb
 
 data:
   raw_data_path: Data
@@ -6,7 +6,7 @@ data:
   train_file: train.pkl
   val_file: validation.pkl
   test_file: test.pkl
-  feature_method: time # agg or time or both
+  feature_method: both # agg or time or both
 
 submit:
   path: Data
@@ -42,7 +42,7 @@ xgb:
   if_predict: false
   lr: 0.005
   num_epochs: 2500
-  load_path: null
+  load_path: model/XGBModel/XGBModel_06221654.json
   save_path: model/XGBModel
   max_depth: 5
   subsample: 1

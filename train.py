@@ -87,5 +87,5 @@ def predict(config):
     result.to_csv(f"submit/submission_{config.model_name}.csv", index=False)
 
 if __name__ == "__main__":
-    train()
-    # predict()
+    # train()
+    predict()
