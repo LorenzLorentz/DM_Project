@@ -1,0 +1,40 @@
+Epoch 1:
+eval metric auc = 0.5004647380944768, 
+Epoch 2:
+eval metric auc = 0.735132970550766, 
+Epoch 3:
+eval metric auc = 0.7423736085374594, 
+Epoch 4:
+eval metric auc = 0.7619280560493964, 
+Epoch 5:
+eval metric auc = 0.7603791934347549, 
+Epoch 6:
+eval metric auc = 0.7539476925154632, 
+Epoch 7:
+eval metric auc = 0.7680081842063765, 
+Epoch 8:
+eval metric auc = 0.7679660207620155, 
+Epoch 9:
+eval metric auc = 0.7675991497810319, 
+Epoch 10:
+eval metric auc = 0.7680673305391607, 
+Epoch 11:
+eval metric auc = 0.7716842666688518, 
+Epoch 12:
+eval metric auc = 0.770608790431097, 
+Epoch 13:
+eval metric auc = 0.7657180312792257, 
+Epoch 14:
+eval metric auc = 0.7733697289591882, 
+Epoch 15:
+eval metric auc = 0.7715320234228538, 
+Epoch 16:
+eval metric auc = 0.7691991973116741, 
+Epoch 17:
+eval metric auc = 0.774099022313689, 
+Epoch 18:
+eval metric auc = 0.7738944836956451, 
+Epoch 19:
+eval metric auc = 0.7733485129450766, 
+Epoch 20:
+eval metric auc = 0.771425861487225, 

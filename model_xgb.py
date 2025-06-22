@@ -44,3 +44,6 @@ class XGBModel(BaseModel):
     
     def predict(self, feature:pd.DataFrame) -> pd.Series:
         return self.clf.predict_proba(feature)
+
+    def load(self):
+        self.clf.load_model(self.load_path)

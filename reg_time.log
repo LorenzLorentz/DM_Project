@@ -1,0 +1,800 @@
+Iteration 1/400:
+  eval metric auc = 0.703116
+Iteration 2/400:
+  eval metric auc = 0.704104
+Iteration 3/400:
+  eval metric auc = 0.703808
+Iteration 4/400:
+  eval metric auc = 0.704648
+Iteration 5/400:
+  eval metric auc = 0.704644
+Iteration 6/400:
+  eval metric auc = 0.705092
+Iteration 7/400:
+  eval metric auc = 0.705279
+Iteration 8/400:
+  eval metric auc = 0.705601
+Iteration 9/400:
+  eval metric auc = 0.705802
+Iteration 10/400:
+  eval metric auc = 0.705965
+Iteration 11/400:
+  eval metric auc = 0.706143
+Iteration 12/400:
+  eval metric auc = 0.706245
+Iteration 13/400:
+  eval metric auc = 0.706360
+Iteration 14/400:
+  eval metric auc = 0.706503
+Iteration 15/400:
+  eval metric auc = 0.706661
+Iteration 16/400:
+  eval metric auc = 0.706769
+Iteration 17/400:
+  eval metric auc = 0.706914
+Iteration 18/400:
+  eval metric auc = 0.706954
+Iteration 19/400:
+  eval metric auc = 0.706985
+Iteration 20/400:
+  eval metric auc = 0.707035
+Iteration 21/400:
+  eval metric auc = 0.707081
+Iteration 22/400:
+  eval metric auc = 0.707119
+Iteration 23/400:
+  eval metric auc = 0.707161
+Iteration 24/400:
+  eval metric auc = 0.707222
+Iteration 25/400:
+  eval metric auc = 0.707253
+Iteration 26/400:
+  eval metric auc = 0.707283
+Iteration 27/400:
+  eval metric auc = 0.707324
+Iteration 28/400:
+  eval metric auc = 0.707359
+Iteration 29/400:
+  eval metric auc = 0.707379
+Iteration 30/400:
+  eval metric auc = 0.707392
+Iteration 31/400:
+  eval metric auc = 0.707415
+Iteration 32/400:
+  eval metric auc = 0.707433
+Iteration 33/400:
+  eval metric auc = 0.707445
+Iteration 34/400:
+  eval metric auc = 0.707456
+Iteration 35/400:
+  eval metric auc = 0.707471
+Iteration 36/400:
+  eval metric auc = 0.707496
+Iteration 37/400:
+  eval metric auc = 0.707513
+Iteration 38/400:
+  eval metric auc = 0.707532
+Iteration 39/400:
+  eval metric auc = 0.707542
+Iteration 40/400:
+  eval metric auc = 0.707552
+Iteration 41/400:
+  eval metric auc = 0.707564
+Iteration 42/400:
+  eval metric auc = 0.707569
+Iteration 43/400:
+  eval metric auc = 0.707573
+Iteration 44/400:
+  eval metric auc = 0.707583
+Iteration 45/400:
+  eval metric auc = 0.707588
+Iteration 46/400:
+  eval metric auc = 0.707598
+Iteration 47/400:
+  eval metric auc = 0.707605
+Iteration 48/400:
+  eval metric auc = 0.707611
+Iteration 49/400:
+  eval metric auc = 0.707620
+Iteration 50/400:
+  eval metric auc = 0.707624
+Iteration 51/400:
+  eval metric auc = 0.707630
+Iteration 52/400:
+  eval metric auc = 0.707636
+Iteration 53/400:
+  eval metric auc = 0.707640
+Iteration 54/400:
+  eval metric auc = 0.707648
+Iteration 55/400:
+  eval metric auc = 0.707652
+Iteration 56/400:
+  eval metric auc = 0.707658
+Iteration 57/400:
+  eval metric auc = 0.707665
+Iteration 58/400:
+  eval metric auc = 0.707668
+Iteration 59/400:
+  eval metric auc = 0.707675
+Iteration 60/400:
+  eval metric auc = 0.707683
+Iteration 61/400:
+  eval metric auc = 0.707691
+Iteration 62/400:
+  eval metric auc = 0.707695
+Iteration 63/400:
+  eval metric auc = 0.707701
+Iteration 64/400:
+  eval metric auc = 0.707705
+Iteration 65/400:
+  eval metric auc = 0.707710
+Iteration 66/400:
+  eval metric auc = 0.707714
+Iteration 67/400:
+  eval metric auc = 0.707721
+Iteration 68/400:
+  eval metric auc = 0.707726
+Iteration 69/400:
+  eval metric auc = 0.707734
+Iteration 70/400:
+  eval metric auc = 0.707738
+Iteration 71/400:
+  eval metric auc = 0.707748
+Iteration 72/400:
+  eval metric auc = 0.707755
+Iteration 73/400:
+  eval metric auc = 0.707761
+Iteration 74/400:
+  eval metric auc = 0.707765
+Iteration 75/400:
+  eval metric auc = 0.707772
+Iteration 76/400:
+  eval metric auc = 0.707774
+Iteration 77/400:
+  eval metric auc = 0.707781
+Iteration 78/400:
+  eval metric auc = 0.707786
+Iteration 79/400:
+  eval metric auc = 0.707790
+Iteration 80/400:
+  eval metric auc = 0.707797
+Iteration 81/400:
+  eval metric auc = 0.707802
+Iteration 82/400:
+  eval metric auc = 0.707809
+Iteration 83/400:
+  eval metric auc = 0.707818
+Iteration 84/400:
+  eval metric auc = 0.707822
+Iteration 85/400:
+  eval metric auc = 0.707828
+Iteration 86/400:
+  eval metric auc = 0.707833
+Iteration 87/400:
+  eval metric auc = 0.707843
+Iteration 88/400:
+  eval metric auc = 0.707845
+Iteration 89/400:
+  eval metric auc = 0.707851
+Iteration 90/400:
+  eval metric auc = 0.707858
+Iteration 91/400:
+  eval metric auc = 0.707863
+Iteration 92/400:
+  eval metric auc = 0.707867
+Iteration 93/400:
+  eval metric auc = 0.707871
+Iteration 94/400:
+  eval metric auc = 0.707876
+Iteration 95/400:
+  eval metric auc = 0.707883
+Iteration 96/400:
+  eval metric auc = 0.707888
+Iteration 97/400:
+  eval metric auc = 0.707894
+Iteration 98/400:
+  eval metric auc = 0.707899
+Iteration 99/400:
+  eval metric auc = 0.707908
+Iteration 100/400:
+  eval metric auc = 0.707911
+Iteration 101/400:
+  eval metric auc = 0.707919
+Iteration 102/400:
+  eval metric auc = 0.707921
+Iteration 103/400:
+  eval metric auc = 0.707927
+Iteration 104/400:
+  eval metric auc = 0.707930
+Iteration 105/400:
+  eval metric auc = 0.707935
+Iteration 106/400:
+  eval metric auc = 0.707942
+Iteration 107/400:
+  eval metric auc = 0.707945
+Iteration 108/400:
+  eval metric auc = 0.707947
+Iteration 109/400:
+  eval metric auc = 0.707949
+Iteration 110/400:
+  eval metric auc = 0.707953
+Iteration 111/400:
+  eval metric auc = 0.707957
+Iteration 112/400:
+  eval metric auc = 0.707959
+Iteration 113/400:
+  eval metric auc = 0.707962
+Iteration 114/400:
+  eval metric auc = 0.707963
+Iteration 115/400:
+  eval metric auc = 0.707967
+Iteration 116/400:
+  eval metric auc = 0.707968
+Iteration 117/400:
+  eval metric auc = 0.707975
+Iteration 118/400:
+  eval metric auc = 0.707976
+Iteration 119/400:
+  eval metric auc = 0.707979
+Iteration 120/400:
+  eval metric auc = 0.707983
+Iteration 121/400:
+  eval metric auc = 0.707985
+Iteration 122/400:
+  eval metric auc = 0.707985
+Iteration 123/400:
+  eval metric auc = 0.707989
+Iteration 124/400:
+  eval metric auc = 0.707992
+Iteration 125/400:
+  eval metric auc = 0.707995
+Iteration 126/400:
+  eval metric auc = 0.707998
+Iteration 127/400:
+  eval metric auc = 0.708002
+Iteration 128/400:
+  eval metric auc = 0.708003
+Iteration 129/400:
+  eval metric auc = 0.708006
+Iteration 130/400:
+  eval metric auc = 0.708008
+Iteration 131/400:
+  eval metric auc = 0.708011
+Iteration 132/400:
+  eval metric auc = 0.708015
+Iteration 133/400:
+  eval metric auc = 0.708018
+Iteration 134/400:
+  eval metric auc = 0.708020
+Iteration 135/400:
+  eval metric auc = 0.708024
+Iteration 136/400:
+  eval metric auc = 0.708026
+Iteration 137/400:
+  eval metric auc = 0.708030
+Iteration 138/400:
+  eval metric auc = 0.708034
+Iteration 139/400:
+  eval metric auc = 0.708036
+Iteration 140/400:
+  eval metric auc = 0.708038
+Iteration 141/400:
+  eval metric auc = 0.708043
+Iteration 142/400:
+  eval metric auc = 0.708044
+Iteration 143/400:
+  eval metric auc = 0.708048
+Iteration 144/400:
+  eval metric auc = 0.708048
+Iteration 145/400:
+  eval metric auc = 0.708052
+Iteration 146/400:
+  eval metric auc = 0.708055
+Iteration 147/400:
+  eval metric auc = 0.708057
+Iteration 148/400:
+  eval metric auc = 0.708060
+Iteration 149/400:
+  eval metric auc = 0.708065
+Iteration 150/400:
+  eval metric auc = 0.708068
+Iteration 151/400:
+  eval metric auc = 0.708070
+Iteration 152/400:
+  eval metric auc = 0.708074
+Iteration 153/400:
+  eval metric auc = 0.708074
+Iteration 154/400:
+  eval metric auc = 0.708080
+Iteration 155/400:
+  eval metric auc = 0.708082
+Iteration 156/400:
+  eval metric auc = 0.708085
+Iteration 157/400:
+  eval metric auc = 0.708089
+Iteration 158/400:
+  eval metric auc = 0.708092
+Iteration 159/400:
+  eval metric auc = 0.708096
+Iteration 160/400:
+  eval metric auc = 0.708101
+Iteration 161/400:
+  eval metric auc = 0.708103
+Iteration 162/400:
+  eval metric auc = 0.708107
+Iteration 163/400:
+  eval metric auc = 0.708107
+Iteration 164/400:
+  eval metric auc = 0.708111
+Iteration 165/400:
+  eval metric auc = 0.708114
+Iteration 166/400:
+  eval metric auc = 0.708116
+Iteration 167/400:
+  eval metric auc = 0.708119
+Iteration 168/400:
+  eval metric auc = 0.708124
+Iteration 169/400:
+  eval metric auc = 0.708124
+Iteration 170/400:
+  eval metric auc = 0.708128
+Iteration 171/400:
+  eval metric auc = 0.708130
+Iteration 172/400:
+  eval metric auc = 0.708133
+Iteration 173/400:
+  eval metric auc = 0.708134
+Iteration 174/400:
+  eval metric auc = 0.708137
+Iteration 175/400:
+  eval metric auc = 0.708140
+Iteration 176/400:
+  eval metric auc = 0.708144
+Iteration 177/400:
+  eval metric auc = 0.708145
+Iteration 178/400:
+  eval metric auc = 0.708149
+Iteration 179/400:
+  eval metric auc = 0.708152
+Iteration 180/400:
+  eval metric auc = 0.708158
+Iteration 181/400:
+  eval metric auc = 0.708158
+Iteration 182/400:
+  eval metric auc = 0.708167
+Iteration 183/400:
+  eval metric auc = 0.708171
+Iteration 184/400:
+  eval metric auc = 0.708173
+Iteration 185/400:
+  eval metric auc = 0.708184
+Iteration 186/400:
+  eval metric auc = 0.708183
+Iteration 187/400:
+  eval metric auc = 0.708186
+Iteration 188/400:
+  eval metric auc = 0.708195
+Iteration 189/400:
+  eval metric auc = 0.708196
+Iteration 190/400:
+  eval metric auc = 0.708200
+Iteration 191/400:
+  eval metric auc = 0.708206
+Iteration 192/400:
+  eval metric auc = 0.708207
+Iteration 193/400:
+  eval metric auc = 0.708212
+Iteration 194/400:
+  eval metric auc = 0.708217
+Iteration 195/400:
+  eval metric auc = 0.708223
+Iteration 196/400:
+  eval metric auc = 0.708224
+Iteration 197/400:
+  eval metric auc = 0.708229
+Iteration 198/400:
+  eval metric auc = 0.708233
+Iteration 199/400:
+  eval metric auc = 0.708236
+Iteration 200/400:
+  eval metric auc = 0.708237
+Iteration 201/400:
+  eval metric auc = 0.708238
+Iteration 202/400:
+  eval metric auc = 0.708240
+Iteration 203/400:
+  eval metric auc = 0.708242
+Iteration 204/400:
+  eval metric auc = 0.708246
+Iteration 205/400:
+  eval metric auc = 0.708248
+Iteration 206/400:
+  eval metric auc = 0.708249
+Iteration 207/400:
+  eval metric auc = 0.708250
+Iteration 208/400:
+  eval metric auc = 0.708252
+Iteration 209/400:
+  eval metric auc = 0.708253
+Iteration 210/400:
+  eval metric auc = 0.708259
+Iteration 211/400:
+  eval metric auc = 0.708265
+Iteration 212/400:
+  eval metric auc = 0.708271
+Iteration 213/400:
+  eval metric auc = 0.708276
+Iteration 214/400:
+  eval metric auc = 0.708278
+Iteration 215/400:
+  eval metric auc = 0.708279
+Iteration 216/400:
+  eval metric auc = 0.708284
+Iteration 217/400:
+  eval metric auc = 0.708292
+Iteration 218/400:
+  eval metric auc = 0.708292
+Iteration 219/400:
+  eval metric auc = 0.708294
+Iteration 220/400:
+  eval metric auc = 0.708294
+Iteration 221/400:
+  eval metric auc = 0.708298
+Iteration 222/400:
+  eval metric auc = 0.708302
+Iteration 223/400:
+  eval metric auc = 0.708302
+Iteration 224/400:
+  eval metric auc = 0.708301
+Iteration 225/400:
+  eval metric auc = 0.708302
+Iteration 226/400:
+  eval metric auc = 0.708305
+Iteration 227/400:
+  eval metric auc = 0.708308
+Iteration 228/400:
+  eval metric auc = 0.708310
+Iteration 229/400:
+  eval metric auc = 0.708311
+Iteration 230/400:
+  eval metric auc = 0.708314
+Iteration 231/400:
+  eval metric auc = 0.708315
+Iteration 232/400:
+  eval metric auc = 0.708318
+Iteration 233/400:
+  eval metric auc = 0.708321
+Iteration 234/400:
+  eval metric auc = 0.708322
+Iteration 235/400:
+  eval metric auc = 0.708325
+Iteration 236/400:
+  eval metric auc = 0.708326
+Iteration 237/400:
+  eval metric auc = 0.708327
+Iteration 238/400:
+  eval metric auc = 0.708328
+Iteration 239/400:
+  eval metric auc = 0.708332
+Iteration 240/400:
+  eval metric auc = 0.708335
+Iteration 241/400:
+  eval metric auc = 0.708336
+Iteration 242/400:
+  eval metric auc = 0.708338
+Iteration 243/400:
+  eval metric auc = 0.708339
+Iteration 244/400:
+  eval metric auc = 0.708342
+Iteration 245/400:
+  eval metric auc = 0.708343
+Iteration 246/400:
+  eval metric auc = 0.708345
+Iteration 247/400:
+  eval metric auc = 0.708347
+Iteration 248/400:
+  eval metric auc = 0.708348
+Iteration 249/400:
+  eval metric auc = 0.708350
+Iteration 250/400:
+  eval metric auc = 0.708353
+Iteration 251/400:
+  eval metric auc = 0.708353
+Iteration 252/400:
+  eval metric auc = 0.708356
+Iteration 253/400:
+  eval metric auc = 0.708355
+Iteration 254/400:
+  eval metric auc = 0.708357
+Iteration 255/400:
+  eval metric auc = 0.708359
+Iteration 256/400:
+  eval metric auc = 0.708372
+Iteration 257/400:
+  eval metric auc = 0.708375
+Iteration 258/400:
+  eval metric auc = 0.708375
+Iteration 259/400:
+  eval metric auc = 0.708376
+Iteration 260/400:
+  eval metric auc = 0.708380
+Iteration 261/400:
+  eval metric auc = 0.708381
+Iteration 262/400:
+  eval metric auc = 0.708385
+Iteration 263/400:
+  eval metric auc = 0.708392
+Iteration 264/400:
+  eval metric auc = 0.708394
+Iteration 265/400:
+  eval metric auc = 0.708393
+Iteration 266/400:
+  eval metric auc = 0.708396
+Iteration 267/400:
+  eval metric auc = 0.708395
+Iteration 268/400:
+  eval metric auc = 0.708405
+Iteration 269/400:
+  eval metric auc = 0.708407
+Iteration 270/400:
+  eval metric auc = 0.708409
+Iteration 271/400:
+  eval metric auc = 0.708410
+Iteration 272/400:
+  eval metric auc = 0.708411
+Iteration 273/400:
+  eval metric auc = 0.708413
+Iteration 274/400:
+  eval metric auc = 0.708416
+Iteration 275/400:
+  eval metric auc = 0.708423
+Iteration 276/400:
+  eval metric auc = 0.708427
+Iteration 277/400:
+  eval metric auc = 0.708428
+Iteration 278/400:
+  eval metric auc = 0.708428
+Iteration 279/400:
+  eval metric auc = 0.708431
+Iteration 280/400:
+  eval metric auc = 0.708438
+Iteration 281/400:
+  eval metric auc = 0.708440
+Iteration 282/400:
+  eval metric auc = 0.708442
+Iteration 283/400:
+  eval metric auc = 0.708443
+Iteration 284/400:
+  eval metric auc = 0.708445
+Iteration 285/400:
+  eval metric auc = 0.708446
+Iteration 286/400:
+  eval metric auc = 0.708449
+Iteration 287/400:
+  eval metric auc = 0.708450
+Iteration 288/400:
+  eval metric auc = 0.708449
+Iteration 289/400:
+  eval metric auc = 0.708451
+Iteration 290/400:
+  eval metric auc = 0.708453
+Iteration 291/400:
+  eval metric auc = 0.708454
+Iteration 292/400:
+  eval metric auc = 0.708455
+Iteration 293/400:
+  eval metric auc = 0.708456
+Iteration 294/400:
+  eval metric auc = 0.708457
+Iteration 295/400:
+  eval metric auc = 0.708457
+Iteration 296/400:
+  eval metric auc = 0.708460
+Iteration 297/400:
+  eval metric auc = 0.708459
+Iteration 298/400:
+  eval metric auc = 0.708461
+Iteration 299/400:
+  eval metric auc = 0.708461
+Iteration 300/400:
+  eval metric auc = 0.708463
+Iteration 301/400:
+  eval metric auc = 0.708466
+Iteration 302/400:
+  eval metric auc = 0.708468
+Iteration 303/400:
+  eval metric auc = 0.708468
+Iteration 304/400:
+  eval metric auc = 0.708469
+Iteration 305/400:
+  eval metric auc = 0.708472
+Iteration 306/400:
+  eval metric auc = 0.708473
+Iteration 307/400:
+  eval metric auc = 0.708474
+Iteration 308/400:
+  eval metric auc = 0.708476
+Iteration 309/400:
+  eval metric auc = 0.708480
+Iteration 310/400:
+  eval metric auc = 0.708481
+Iteration 311/400:
+  eval metric auc = 0.708482
+Iteration 312/400:
+  eval metric auc = 0.708483
+Iteration 313/400:
+  eval metric auc = 0.708486
+Iteration 314/400:
+  eval metric auc = 0.708487
+Iteration 315/400:
+  eval metric auc = 0.708487
+Iteration 316/400:
+  eval metric auc = 0.708489
+Iteration 317/400:
+  eval metric auc = 0.708489
+Iteration 318/400:
+  eval metric auc = 0.708492
+Iteration 319/400:
+  eval metric auc = 0.708492
+Iteration 320/400:
+  eval metric auc = 0.708493
+Iteration 321/400:
+  eval metric auc = 0.708492
+Iteration 322/400:
+  eval metric auc = 0.708494
+Iteration 323/400:
+  eval metric auc = 0.708495
+Iteration 324/400:
+  eval metric auc = 0.708496
+Iteration 325/400:
+  eval metric auc = 0.708497
+Iteration 326/400:
+  eval metric auc = 0.708498
+Iteration 327/400:
+  eval metric auc = 0.708501
+Iteration 328/400:
+  eval metric auc = 0.708500
+Iteration 329/400:
+  eval metric auc = 0.708500
+Iteration 330/400:
+  eval metric auc = 0.708503
+Iteration 331/400:
+  eval metric auc = 0.708505
+Iteration 332/400:
+  eval metric auc = 0.708507
+Iteration 333/400:
+  eval metric auc = 0.708508
+Iteration 334/400:
+  eval metric auc = 0.708509
+Iteration 335/400:
+  eval metric auc = 0.708508
+Iteration 336/400:
+  eval metric auc = 0.708511
+Iteration 337/400:
+  eval metric auc = 0.708513
+Iteration 338/400:
+  eval metric auc = 0.708513
+Iteration 339/400:
+  eval metric auc = 0.708514
+Iteration 340/400:
+  eval metric auc = 0.708518
+Iteration 341/400:
+  eval metric auc = 0.708519
+Iteration 342/400:
+  eval metric auc = 0.708519
+Iteration 343/400:
+  eval metric auc = 0.708521
+Iteration 344/400:
+  eval metric auc = 0.708522
+Iteration 345/400:
+  eval metric auc = 0.708525
+Iteration 346/400:
+  eval metric auc = 0.708527
+Iteration 347/400:
+  eval metric auc = 0.708528
+Iteration 348/400:
+  eval metric auc = 0.708530
+Iteration 349/400:
+  eval metric auc = 0.708533
+Iteration 350/400:
+  eval metric auc = 0.708533
+Iteration 351/400:
+  eval metric auc = 0.708534
+Iteration 352/400:
+  eval metric auc = 0.708535
+Iteration 353/400:
+  eval metric auc = 0.708538
+Iteration 354/400:
+  eval metric auc = 0.708539
+Iteration 355/400:
+  eval metric auc = 0.708540
+Iteration 356/400:
+  eval metric auc = 0.708541
+Iteration 357/400:
+  eval metric auc = 0.708541
+Iteration 358/400:
+  eval metric auc = 0.708543
+Iteration 359/400:
+  eval metric auc = 0.708545
+Iteration 360/400:
+  eval metric auc = 0.708546
+Iteration 361/400:
+  eval metric auc = 0.708550
+Iteration 362/400:
+  eval metric auc = 0.708551
+Iteration 363/400:
+  eval metric auc = 0.708552
+Iteration 364/400:
+  eval metric auc = 0.708553
+Iteration 365/400:
+  eval metric auc = 0.708554
+Iteration 366/400:
+  eval metric auc = 0.708555
+Iteration 367/400:
+  eval metric auc = 0.708556
+Iteration 368/400:
+  eval metric auc = 0.708557
+Iteration 369/400:
+  eval metric auc = 0.708559
+Iteration 370/400:
+  eval metric auc = 0.708559
+Iteration 371/400:
+  eval metric auc = 0.708559
+Iteration 372/400:
+  eval metric auc = 0.708562
+Iteration 373/400:
+  eval metric auc = 0.708561
+Iteration 374/400:
+  eval metric auc = 0.708564
+Iteration 375/400:
+  eval metric auc = 0.708566
+Iteration 376/400:
+  eval metric auc = 0.708566
+Iteration 377/400:
+  eval metric auc = 0.708565
+Iteration 378/400:
+  eval metric auc = 0.708568
+Iteration 379/400:
+  eval metric auc = 0.708569
+Iteration 380/400:
+  eval metric auc = 0.708570
+Iteration 381/400:
+  eval metric auc = 0.708572
+Iteration 382/400:
+  eval metric auc = 0.708574
+Iteration 383/400:
+  eval metric auc = 0.708574
+Iteration 384/400:
+  eval metric auc = 0.708578
+Iteration 385/400:
+  eval metric auc = 0.708580
+Iteration 386/400:
+  eval metric auc = 0.708582
+Iteration 387/400:
+  eval metric auc = 0.708584
+Iteration 388/400:
+  eval metric auc = 0.708586
+Iteration 389/400:
+  eval metric auc = 0.708588
+Iteration 390/400:
+  eval metric auc = 0.708589
+Iteration 391/400:
+  eval metric auc = 0.708588
+Iteration 392/400:
+  eval metric auc = 0.708589
+Iteration 393/400:
+  eval metric auc = 0.708592
+Iteration 394/400:
+  eval metric auc = 0.708592
+Iteration 395/400:
+  eval metric auc = 0.708595
+Iteration 396/400:
+  eval metric auc = 0.708596
+Iteration 397/400:
+  eval metric auc = 0.708597
+Iteration 398/400:
+  eval metric auc = 0.708597
+Iteration 399/400:
+  eval metric auc = 0.708597
+Iteration 400/400:
+  eval metric auc = 0.708599

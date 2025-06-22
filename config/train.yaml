@@ -1,11 +1,12 @@
-model_name: mlp
+model_name: reg
 
 data:
   raw_data_path: Data
   path: Processed_Data
   train_file: train.pkl
+  val_file: validation.pkl
   test_file: test.pkl
-  feature_method: both # agg or time or both
+  feature_method: time # agg or time or both
 
 submit:
   path: Data
@@ -55,7 +56,7 @@ lgb:
   if_predict: false
   lr: 0.005
   num_epochs: 2500
-  load_path: null
+  load_path: null #model/LGBModel/LGBModel_06202217.joblib
   save_path: model/LGBModel
   num_leaves: 31
   reg_alpha: 0.25
@@ -65,4 +66,8 @@ lgb:
   subsample: 1
   colsample_bytree: 1
 
-din:
+reg:
+  lr: 0.1
+  num_epochs: 400
+  load_path: null
+  save_path: model/RegModel

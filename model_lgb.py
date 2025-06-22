@@ -31,7 +31,10 @@ class LGBModel(BaseModel):
     def train(self, feature:pd.DataFrame, label:pd.Series, eval:tuple[pd.DataFrame, pd.Series], eval_metrics:list[str], verbose:int):
         self.clf.fit(feature, label, eval_set=eval, eval_metric=eval_metrics, callbacks=[lgb.log_evaluation(period=verbose)])
         time=datetime.datetime.now().strftime("%m%d%H%M")
-        joblib.dump(self.clf, os.path.join(self.save_path, f"XGBModel_{time}.json"))
+        joblib.dump(self.clf, os.path.join(self.save_path, f"LGBModel_{time}.joblib")) 
     
     def predict(self, feature:pd.DataFrame):
         return self.clf.predict_proba(feature)
+    
+    def load(self):
+        self.clf = joblib.load(self.load_path)
